@@ -21,15 +21,8 @@ class Tree:
             s += f".add_children(*{repr(self.children)})"
         return s
 
-    def to_string(self, indent=0):
-        children_array = [child.to_string(indent+1) for child in self.children]
-        if len(children_array) > 0:
-            children_array = [""] + children_array
-        children_str = os.linesep.join(children_array)
-        return "  " * indent + str(self.symbol) + children_str
-
-    def __str__(self):
-        return self.to_string()
+    def __iter__(self):
+        return iter(self.children)
 
 
 class ProductionRule:
@@ -113,14 +106,4 @@ class CFGrammar:
                 s += f".add_generative_rule({repr(lhs)}, {repr(symbols)}, {repr(weight)})"
         return s
 
-    def __str__(self):
-        ls = []
-        for lhs, prod_set in self.production_sets.items():
-            pre = f"{lhs} --> "
-            for weight, symbols in prod_set:
-                s = pre + " ".join(symbols) + f" ({weight})"
-                pre = " "*len(pre)
-                ls.append(s)
-
-        return os.linesep.join(ls)
 

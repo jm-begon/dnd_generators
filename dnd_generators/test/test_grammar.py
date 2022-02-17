@@ -1,4 +1,5 @@
 from dnd_generators import CFGrammar
+from dnd_generators import BaseDisplayer
 
 
 def make_grammar():
@@ -42,14 +43,17 @@ def make_grammar():
 
 def test_grammar_repr():
     _, G = make_grammar()
-    print(G)
+    displayer = BaseDisplayer()
+    displayer(G)
 
 
 def test_tree():
     s, G = make_grammar()
 
     tree = G.generate(s)
-    print(tree)
+
+    displayer = BaseDisplayer()
+    displayer(tree)
 
 
 if __name__ == '__main__':
