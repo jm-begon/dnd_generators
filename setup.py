@@ -12,7 +12,7 @@ VERSION = '0.0.dev'
 AUTHOR = "Jean-Michel Begon"
 AUTHOR_EMAIL = "jm.begon@gmail.com"
 URL = 'https://github.com/jm-begon/dnd_generators/'
-DESCRIPTION = 'A small utility to help generate stuff'
+DESCRIPTION = 'A small utility to help generate stuff. The author does not claim ownership of the *data* used. Make sure you have a legal access to those before using this pacakge'
 with open('README.md') as f:
     LONG_DESCRIPTION = f.read()
 CLASSIFIERS = [
@@ -36,6 +36,7 @@ if __name__ == '__main__':
           classifiers=CLASSIFIERS,
           platforms='any',
           install_requires=[],
+          include_package_data=True,
           packages=['dnd_generators', "dnd_generators/fights",
                     "dnd_generators/npc", "dnd_generators/adventure"],
           )

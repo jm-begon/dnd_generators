@@ -2,9 +2,13 @@ import os
 from collections import defaultdict
 from random import Random
 
+from .dice import Intable
+
 
 class Tree:
     def __init__(self, symbol, parent=None):
+        if isinstance(symbol, Intable):
+            symbol = int(symbol)
         self.parent = parent
         self.symbol = symbol
         self.children = []
@@ -105,5 +109,10 @@ class CFGrammar:
             for weight, symbols in prod_set:
                 s += f".add_generative_rule({repr(lhs)}, {repr(symbols)}, {repr(weight)})"
         return s
+
+    def __iter__(self):
+        for lhs, prod_set in self.production_sets.items():
+            for weight, symbols in prod_set:
+                yield lhs, symbols, weight
 
 

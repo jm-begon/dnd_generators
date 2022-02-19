@@ -1,0 +1,17 @@
+Generative symbol;Weight;Generated symbols
+dungeon;;dungeon_location && dungeon_creator && dungeon_purpose && dungeon_history
+dungeon_location;4;A building in a city
+dungeon_location;4;Catacombs or sewers beneath a city
+dungeon_location;5;dungeon_location_exotic
+dungeon_location_exotic;;Among the branches of a tree
+dungeon_location_exotic;;On a cloud
+dungeon_creator;1;No creator (natural place)
+dungeon_creator;4;Dwarves
+dungeon_creator;3;cultist_creator
+cultist_creator;2;Elemental water cultists
+cultist_creator;5;Worshipers of an evil god
+dungeon_purpose;3;Death trap
+dungeon_purpose;1;Treasure vault
+dungeon_purpose;3;Mine
+dungeon_history;4;Abandoned by creators
+dungeon_history;1;Destroyed by a discovery made within the site
